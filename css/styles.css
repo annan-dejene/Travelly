@@ -1,0 +1,360 @@
+/* Global Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Popins', sans-serif;
+}
+
+/*Custom fonts*/
+h1 {
+    font-size: 2.6rem;
+}
+
+li, button, label, input, p {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 4.8rem;
+}
+
+h3 {
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+h4, h5 {
+    font-size: 2.8rem;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+button {
+    color: white;
+    border: 0;
+    background-color: #4c6e97;
+    padding: 2rem 6rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out; /*First one is what we want to affect in the transition, second is how long it will last and the third is how it'll do it, if we have a 4th one it'll be transition delay*/
+    animation: buttonAnimation 2s infinite alternate;    
+}
+
+button:hover {
+    background: #2c3f57;
+    font-size: 2.6rem;
+}
+
+/*------------------------------ Nav Bar and Hero ------------------------------*/
+
+/*Nav bar*/
+
+.main-head {
+    background-color: #131c27;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+
+
+nav {   /*Parent*/
+    min-height: 10vh;
+    display: flex;
+    width: 90%;
+    margin: auto;
+    padding: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav ul { /*Child*/
+    flex: 1 1 40rem;
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+#logo { /*Child*/
+    flex: 2 1 40rem; /*As the first component, flex grow is 2, the logo will have twice the space the ul have*/
+    font-family: 'Pattaya', sans-serif;
+    font-weight: 400;
+}
+
+/*Hero*/
+
+.hero {
+    min-height: 90vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), transparent), url(../images/landing-page.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h3 {
+    margin: 5rem;
+}
+
+
+/* Locations */
+
+#locations {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), transparent), url('../images/new-york-page.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.locations-header {
+    width: 90%;
+    margin: auto;
+}
+
+.locations-header h2 {
+    text-decoration: underline;
+    text-decoration-thickness: 0.5rem;
+    margin: 1rem 0;
+}
+
+.locations-header h3 {
+    padding: 4rem 0;
+    background: linear-gradient(#1c1327, #663b34);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cloud {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    pointer-events: none;
+}
+
+.moving-cloud-1 {
+    animation: cloudAnimation 3s infinite alternate ease-in-out;
+}
+
+.moving-cloud-2 {
+    top: 10%;
+    z-index: -1;
+    opacity: 0.5;
+    animation: cloudAnimation 4s infinite alternate ease-in-out;
+}
+
+/*Benefits*/
+
+.benefits-header {
+    background: #343c44;
+    color: white;
+    min-height: 30vh;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.benefits-header h2 {
+    padding: 1rem 0;
+}
+
+.cards {
+    width: 90vw;
+    margin: auto;
+    display: flex;
+    min-height: 70vh;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1 1 25rem;
+    min-height: 50vh;
+    margin: 2rem 3rem;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.459), 0px 20px 20px rgba(0, 0, 0, 0.459);
+    text-align: center;
+}
+
+.card-icon {
+    background: #27394e;
+}
+
+.cards img {
+    height: 100px;
+    padding: 2rem;
+    max-width: 35%;
+}
+
+.cards h4, .cards p {
+    padding: 1rem
+}
+
+/*Contact Us*/
+
+#contact {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), transparent), url('/images/contact-mountain.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-wrapper {
+    background: rgba(19, 28, 39, 0.8);
+    color: white;
+    border-radius: 3rem;
+    width: 60%;
+}
+
+.form-header {
+    text-align: center;
+    padding: 5rem;
+}
+
+
+.name-form, .email-form {
+    text-align: center;
+    padding: 5rem;
+}
+
+.form-wrapper label {
+    padding: 2rem;
+}
+
+.form-wrapper input {
+    padding: 1rem 3rem;
+}
+
+.form-wrapper button {
+    width: 100%;
+    padding: 2rem;
+    margin-top: 5rem;
+    border-bottom-left-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+}
+
+/*Footer*/
+
+footer {
+    background-color: #131c27;
+    color: white;
+}
+
+.footer-container {
+    min-height: 10vh;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-container h1 {
+       flex: 2 1 40rem;
+}
+
+.footer-container ul {
+    flex: 1 1 40rem;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+/*Animations */
+
+@keyframes buttonAnimation{
+    0%{
+        background: rgb(30, 110, 124);
+    }
+    25%{
+        background: rgb(59, 80, 128);
+    }
+    50%{
+        background: rgb(24, 38, 70);
+    }
+    100%{
+        background: rgb(8, 24, 58);
+    }
+}
+
+@keyframes cloudAnimation {
+    from {
+        transform: translate(10%, -10%);
+    }
+    to {
+        transform: translate(0%, 0%);
+    }
+}
+
+/* Media Query */
+@media screen and (max-width: 935px)  {
+    html {
+        font-size: 45%;
+    }
+
+    nav, .footer-container {
+        text-align: center;
+    }
+
+    #logo, .footer-text {
+        padding: 2rem;
+    }
+    
+    .cloud {
+        height: 30rem;
+    }
+
+    .moving-cloud-1 {
+        z-index: -1;
+    }
+
+    .moving-cloud-2 {
+        z-index: -2;
+    }
+
+    .locations-header h3 {
+        background: rgba(19, 28, 39, 0.8);
+        -webkit-text-fill-color: white;
+        padding: 2rem;
+    }
+    .form-wrapper {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1700px) {
+    .cloud {
+        height: 50rem;
+    }
+}
